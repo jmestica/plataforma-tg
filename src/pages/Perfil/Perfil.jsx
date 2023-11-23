@@ -10,7 +10,7 @@ import {
   InputNumber,
   Upload,
   message,
-  Tooltip
+  Tooltip,
 } from "antd";
 import { BsMicrosoftTeams } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -288,12 +288,19 @@ function Perfil() {
             </Col>
           </Row>
 
-          <div
-            className="card-header"
-          >
-            <div style={{ display: "flex", alignItems: "center", marginBottom: '10px' }}>
+          <div className="card-header">
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                marginBottom: "10px",
+              }}
+            >
               <p>Firma</p>
-              <QuestionCircleOutlined style={{margin: '0 10px'}}/>
+
+              <Tooltip title="La firma es para la generación de las minutas automáticas, de esta manera se podrá firmar y generar automáticamente las minutas de las visitas en las que participes">
+                <QuestionCircleOutlined style={{ margin: "0 10px" }} />
+              </Tooltip>
             </div>
           </div>
           <br />
@@ -330,6 +337,10 @@ function Perfil() {
               </Upload>
             </Form.Item>
           </Row>
+
+          <Button type="primary" htmlType="submit">
+            Guardar
+          </Button>
         </Form>
       </Card>
     </div>
