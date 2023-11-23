@@ -1,0 +1,39 @@
+.profile-container{
+    display: flex;
+    gap: 20px;
+}
+
+.profile-username{
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.profile-description{
+    font-size: 15px;
+    text-align: center;
+    color: #999999;
+    margin: 5px 0;
+}
+
+.card-header{
+    border-bottom: 1px solid #e6e6e6;
+    font-weight: 500;
+}
+
+.ant-input{
+    padding: .5rem;
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .profile-container{
+            display: flex;
+            flex-direction: column;
+        }
+  
+    .ant-card{
+        width: 100% !important;
+    }
+
+
+    }

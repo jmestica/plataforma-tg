@@ -1,0 +1,40 @@
+.header {
+  padding: .4rem 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0093e9;
+  background-image: linear-gradient(250.38deg, rgb(230, 244, 255) 2.39%, rgb(105, 177, 255) 34.42%, rgb(22, 119, 255) 60.95%, rgb(9, 88, 217) 84.83%, rgb(0, 44, 140) 104.37%);
+  color: white;
+  border-radius: 4px;
+}
+
+.landing-img{
+    width: 80%;
+}
+
+.home-cards-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+@media only screen and (max-width: 1000px) {
+
+  .header{
+          padding: 2rem 2rem;
+      }
+
+  }
+
+
+  @media only screen and (max-width: 600px) {
+
+    .landing-img{
+            display: none;
+        }
+  
+    }
+      
+    
