@@ -1,0 +1,50 @@
+.login-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fafafa;
+}
+
+.login-logo {
+  display: flex;
+  font-weight: 600;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 3rem;
+}
+
+.card-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card {
+  max-width: 500px;
+  margin: 0 1rem;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 23px;
+}
+
+.login-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ant-input {
+  padding: 0.5rem !important;
+}
+
+.ant-input-group-addon {
+  width: 50% !important;
+}
+
+.login-btn {
+  height: 2.6rem;
+}

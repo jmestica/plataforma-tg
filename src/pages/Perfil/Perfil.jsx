@@ -337,10 +337,11 @@ function Perfil() {
               </Upload>
             </Form.Item>
           </Row>
-
-          <Button type="primary" htmlType="submit">
-            Guardar
-          </Button>
+          <Row style={{display: 'flex', justifyContent: 'center'}}>
+            <Button type="primary" htmlType="submit">
+              Guardar
+            </Button>
+          </Row>
         </Form>
       </Card>
     </div>

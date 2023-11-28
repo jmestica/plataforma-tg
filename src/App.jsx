@@ -1,5 +1,5 @@
 //Routing
-import { BrowserRouter as Router, Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 //Styles
 import "./App.css";
@@ -15,13 +15,21 @@ import Equipos from "./pages/Equipos/Equipos";
 import Asesores from "./pages/Asesores/Asesores";
 import Estadisticas from "./pages/Estadisticas/Estadisticas";
 import Perfil from "./pages/Perfil/Perfil";
-
+import Login from  "./pages/Login/Login";
+import Registro from "./pages/Registro/Registro";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
+
+            {/* ===========================  Temporal para hacer pantallas de login y registro ==================================== */}
+            <Route path="/login" element={<Login/>}/>
+            <Route path="/registro" element={<Registro/>}/>
+
+
+
             <Route path="/" element={<LayoutDashboard/>}>
               <Route index element={<Home/>}/>
               <Route path="noticias" element={<Noticias/>}/>
@@ -33,9 +41,6 @@ function App() {
               <Route path="asesores" element={<Asesores/>}/>
               <Route path="estadisticas" element={<Estadisticas/>}/>
               <Route path="perfil" element={<Perfil/>}/>
-
-
-
             </Route>
         </Routes>
       </BrowserRouter>
