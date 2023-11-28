@@ -1,12 +1,22 @@
-.card-container{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.card-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .login-card {
-    max-width: 500px;
-    margin: 0 1rem;
+  max-width: 700px;
+  margin: 0 1rem;
+}
+
+.ant-select{
+  height: 43px !important;
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .login-card {
+    max-width: 700px;
   }
-  
+}
