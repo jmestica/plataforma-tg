@@ -270,6 +270,7 @@ function Perfil() {
               >
                 <Select
                   allowClear
+                  style={{padding: '.5rem'}}
                   options={[
                     { value: "Neuquén", label: "Neuquén" },
                     { value: "Cipolletti", label: "Cipolleti" },

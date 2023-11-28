@@ -167,7 +167,7 @@ function LayoutDashboard() {
             >
               <div onClick={(e) => e.preventDefault()}>
                 <UserOutlined style={{ margin: "0 5px" }} />
-                <a className="username">Juan Mestica</a>
+                <Link to="/perfil" className="username">Juan Mestica</Link>
               </div>
             </Dropdown>
 
