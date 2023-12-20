@@ -192,7 +192,7 @@ function Perfil() {
                 label="Fecha de Nacimiento"
                 rules={[
                   {
-                    required: true,
+                    required: false,
                     message: "Se debe seleccionar una fecha de nacimiento",
                   },
                 ]}
@@ -223,7 +223,7 @@ function Perfil() {
                 ]}
               >
                 <InputNumber
-                  style={{ width: "100%" }}
+                  style={{ width: "100%", height: '48px',}}
                   addonBefore="+54"
                   controls={false}
                 />
@@ -270,7 +270,7 @@ function Perfil() {
               >
                 <Select
                   allowClear
-                  style={{padding: '.5rem'}}
+                  className="sede"
                   options={[
                     { value: "Neuquén", label: "Neuquén" },
                     { value: "Cipolletti", label: "Cipolleti" },
@@ -338,7 +338,7 @@ function Perfil() {
               </Upload>
             </Form.Item>
           </Row>
-          <Row style={{display: 'flex', justifyContent: 'center'}}>
+          <Row style={{ display: "flex", justifyContent: "center" }}>
             <Button type="primary" htmlType="submit">
               Guardar
             </Button>

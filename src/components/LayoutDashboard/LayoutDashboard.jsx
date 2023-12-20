@@ -16,7 +16,7 @@ import { MdOutlineBusinessCenter } from "react-icons/md";
 import { GiTabletopPlayers } from "react-icons/gi";
 import { FaNewspaper } from "react-icons/fa";
 
-import { Layout, Menu, Button, theme, Dropdown } from "antd";
+import { Layout, Menu, Button, Dropdown } from "antd";
 const { Header, Sider, Content } = Layout;
 
 // ===========================================================================
@@ -38,19 +38,34 @@ function getItem(label, key, icon, children, to) {
 }
 
 const items = [
-  getItem( (<Link to='/'>  Inicio </Link>), "1", <HomeOutlined />, null),
-  getItem((<Link to='/noticias'> Noticias </Link>), "2", <FaNewspaper />, null),
+  getItem(<Link to="/"> Inicio </Link>, "1", <HomeOutlined />, null),
+  getItem(<Link to="/noticias"> Noticias </Link>, "2", <FaNewspaper />, null),
   getItem("Empresas", "3", <MdOutlineBusinessCenter />, [
-    getItem((<Link to='/buscador'> Buscador </Link>), "4", null, null),
-    getItem((<Link to='/asistencias'> Asistencias </Link>), "5", null, null),
-    getItem((<Link to='/herramientas'> Herramientas de TG </Link>), "6", null, null),
+    getItem(<Link to="/buscador"> Buscador </Link>, "4", null, null),
+    getItem(<Link to="/asistencias"> Asistencias </Link>, "5", null, null),
+    getItem(<Link to="/cargarempresa"> Cargar Empresa </Link>, "5.1", null, null),
+
+    getItem(
+      <Link to="/herramientas"> Herramientas de TG </Link>,
+      "6",
+      null,
+      null
+    ),
   ]),
   getItem("Act. Lúdicas", "7", <GiTabletopPlayers />, [
-    getItem((<Link to='/catalogo'> Catálogo </Link>), "8"),
-    getItem((<Link to='/equipos'> Equipos </Link>), "9"),
+    getItem(<Link to="/catalogo"> Catálogo </Link>, "8"),
+    getItem(<Link to="/equipos"> Equipos </Link>, "9"),
   ]),
-  getItem((<Link to='/asesores'> Asesores </Link>), "10", <UsergroupAddOutlined />),
-  getItem((<Link to='/estadisticas'> Estadísticas </Link>), "11", <PieChartOutlined />),
+  getItem(
+    <Link to="/asesores"> Asesores </Link>,
+    "10",
+    <UsergroupAddOutlined />
+  ),
+  getItem(
+    <Link to="/estadisticas"> Estadísticas </Link>,
+    "11",
+    <PieChartOutlined />
+  ),
 ];
 
 // =================================SIDEBAR ITEMS======================================
@@ -85,7 +100,7 @@ const user_items = [
         type="link"
         icon={<UserOutlined style={{ fontSize: "20px" }} />}
       >
-        <Link to='/perfil'> Ver Perfil </Link>
+        <Link to="/perfil"> Ver Perfil </Link>
       </Button>
     ),
     key: "1",
@@ -98,7 +113,7 @@ const user_items = [
         type="link"
         icon={<BarsOutlined style={{ fontSize: "20px" }} />}
       >
-        <Link to='/historial'>Mi Historial</Link>
+        <Link to="/historial">Mi Historial</Link>
       </Button>
     ),
     key: "3",
@@ -109,10 +124,6 @@ const user_items = [
 
 function LayoutDashboard() {
   const [collapsed, setCollapsed] = useState(false);
-
-  const {
-    token: { colorBgContainer },
-  } = theme.useToken();
 
   return (
     <>
@@ -132,18 +143,20 @@ function LayoutDashboard() {
           <div className="demo-logo-vertical" />
 
           <div className="logo">
-            <DeploymentUnitOutlined
-              style={{ fontSize: "32px", color: "#1677FF" }}
-            />
+            <Link to="/" style={{display: 'flex', alignItems: 'center'}}>
+              <DeploymentUnitOutlined
+                style={{ fontSize: "32px", color: "#1677FF" }}
+              />
 
-            {!collapsed ? <h1 className="title"> Red TG </h1> : null}
+              {!collapsed ? <h1 className="title"> Red TG </h1> : null}
+            </Link>
           </div>
 
           <Menu
             theme="light"
             mode="inline"
             defaultSelectedKeys={["1"]}
-            items={items} 
+            items={items}
           />
         </Sider>
         <Layout>
@@ -167,7 +180,9 @@ function LayoutDashboard() {
             >
               <div onClick={(e) => e.preventDefault()}>
                 <UserOutlined style={{ margin: "0 5px" }} />
-                <Link to="/perfil" className="username">Juan Mestica</Link>
+                <Link to="/perfil" className="username">
+                  Juan Mestica
+                </Link>
               </div>
             </Dropdown>
 
@@ -177,7 +192,7 @@ function LayoutDashboard() {
             style={{
               padding: 24,
               minHeight: 280,
-              background: "#f0f0f0",
+              background: "#fbfbfb",
             }}
           >
             <Outlet />

@@ -17,6 +17,8 @@ import Estadisticas from "./pages/Estadisticas/Estadisticas";
 import Perfil from "./pages/Perfil/Perfil";
 import Login from  "./pages/Login/Login";
 import Registro from "./pages/Registro/Registro";
+import CargarEmpresa from "./pages/CargarEmpresa/CargarEmpresa";
+
 
 function App() {
   return (
@@ -35,12 +37,15 @@ function App() {
               <Route path="noticias" element={<Noticias/>}/>
               <Route path="buscador" element={<Buscador/>} />
               <Route path="asistencias" element={<Asistencia/>} />
+              <Route path="cargarempresa" element={<CargarEmpresa/>}/>
+
               <Route path="herramientas" element={<Herramientas/>} />
               <Route path="catalogo" element={<Herramientas/>} />
               <Route path="equipos" element={<Equipos/>}/>
               <Route path="asesores" element={<Asesores/>}/>
               <Route path="estadisticas" element={<Estadisticas/>}/>
               <Route path="perfil" element={<Perfil/>}/>
+
             </Route>
         </Routes>
       </BrowserRouter>
