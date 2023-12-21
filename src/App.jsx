@@ -18,6 +18,7 @@ import Perfil from "./pages/Perfil/Perfil";
 import Login from  "./pages/Login/Login";
 import Registro from "./pages/Registro/Registro";
 import CargarEmpresa from "./pages/CargarEmpresa/CargarEmpresa";
+import PerfilAsesor from "./pages/PerfilAsesor/PerfilAsesor";
 
 
 function App() {
@@ -45,6 +46,9 @@ function App() {
               <Route path="asesores" element={<Asesores/>}/>
               <Route path="estadisticas" element={<Estadisticas/>}/>
               <Route path="perfil" element={<Perfil/>}/>
+
+              <Route path="asesor/:id" element={<PerfilAsesor/>}/>
+
 
             </Route>
         </Routes>

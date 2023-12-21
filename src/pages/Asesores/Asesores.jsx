@@ -64,7 +64,7 @@ function Asesores() {
                   src={`https://xsgames.co/randomusers/avatar.php?g=pixel&key=${index}`}
                 />
               }
-              title={<a href="https://ant.design">{item.title}</a>}
+              title={<a href="/asesor/123">{item.title}</a>}
               description="#123123 - INTI Neuquén"
             />
           </List.Item>
