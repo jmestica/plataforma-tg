@@ -19,6 +19,7 @@ import Login from  "./pages/Login/Login";
 import Registro from "./pages/Registro/Registro";
 import CargarEmpresa from "./pages/CargarEmpresa/CargarEmpresa";
 import PerfilAsesor from "./pages/PerfilAsesor/PerfilAsesor";
+import Error404 from "./pages/404/Error404";
 
 
 function App() {
@@ -28,12 +29,13 @@ function App() {
         <Routes>
 
             {/* ===========================  Temporal para hacer pantallas de login y registro ==================================== */}
+   
             <Route path="/login" element={<Login/>}/>
             <Route path="/registro" element={<Registro/>}/>
 
-
-
             <Route path="/" element={<LayoutDashboard/>}>
+
+
               <Route index element={<Home/>}/>
               <Route path="noticias" element={<Noticias/>}/>
               <Route path="buscador" element={<Buscador/>} />
@@ -50,7 +52,11 @@ function App() {
               <Route path="asesor/:id" element={<PerfilAsesor/>}/>
 
 
+
             </Route>
+
+            <Route path="*" element={<Error404/>}/>
+
         </Routes>
       </BrowserRouter>
     

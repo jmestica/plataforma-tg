@@ -5,7 +5,7 @@ function Buscador() {
     <div className='section-container'>
         <h1 className="section-title">Empresas</h1>
         <p className="section-description">
-        Buscá una empresa o un grupo de empresas filtrando por sus características.
+        Buscá una empresa o grupo de empresas filtrando por sus características.
       </p>
 
 
