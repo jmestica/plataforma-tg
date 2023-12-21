@@ -47,7 +47,7 @@ function Home() {
         <HomeCard
           img={asistenciaImage}
           link="/asistencias"
-          title="Asistencias y visitas"
+          title="Asistencias"
         />
         <HomeCard
           img={bookImage}
