@@ -13,19 +13,17 @@ import {
 
 const { TextArea } = Input;
 
+import { useNavigate } from 'react-router-dom';
+
 import "./Buscador.css";
 
 // ========================DATOS DE TEST========================
 
-const data = [];
-for (let i = 0; i < 100; i++) {
-  data.push({
-    key: i,
-    name: `Edward King ${i}`,
-    age: 32,
-    address: `London, Park Lane no. ${i}`,
-  });
-}
+const datatest = [
+  { key: "1", razon_social: "Empresa 1", CUIT: 123, provincia: "Provincia 1" },
+];
+
+// =============================================================
 
 const columnas = [
   {
@@ -58,8 +56,9 @@ function Buscador() {
 
   // ============================= INICIALIZACIÓN Y ESTADOS =================================
 
-  const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
 
+  const [isLoading, setIsLoading] = useState(true);
   const [empresas, setEmpresas] = useState([]);
 
   useEffect(() => {
@@ -201,7 +200,13 @@ function Buscador() {
       {isLoading ? (
         <Skeleton title={"Resultados"} active paragraph={{ rows: 6 }} />
       ) : (
-        <Table columns={columnas}></Table>
+        <Table
+          columns={columnas}
+          dataSource={datatest}
+          onRow={(record) => ({
+            onClick: () => navigate(`/info-general/${record.CUIT}`),
+          })}
+        ></Table>
       )}
 
       {/* Lista de difusión */}
@@ -224,9 +229,16 @@ function Buscador() {
         cancelText="Cancelar"
         okText="Copiar mails"
         centered
-        style={{ marginLeft: "150px", marginTop: '50px' }}
+        style={{ marginLeft: "150px", marginTop: "50px" }}
       >
-        <TextArea rows={7} style={{ backgroundColor: "#f1f1f1", fontFamily: "'Courier New', Courier, monospace" }}  value={'mail1@gmail.com \nmail2@gmail.com \nmail3@gmail.com'}/>
+        <TextArea
+          rows={7}
+          style={{
+            backgroundColor: "#f1f1f1",
+            fontFamily: "'Courier New', Courier, monospace",
+          }}
+          value={"mail1@gmail.com \nmail2@gmail.com \nmail3@gmail.com"}
+        />
       </Modal>
     </div>
   );
