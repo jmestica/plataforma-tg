@@ -1,0 +1,15 @@
+.info-general-titles {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
+.linea-gris {
+    border-color: #80808024;
+  }
+
+.info-general-buttons {
+    display: flex;
+    justify-content: center;
+
+}

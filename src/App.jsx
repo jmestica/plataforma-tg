@@ -19,6 +19,7 @@ import Login from  "./pages/Login/Login";
 import Registro from "./pages/Registro/Registro";
 import CargarEmpresa from "./pages/CargarEmpresa/CargarEmpresa";
 import PerfilAsesor from "./pages/PerfilAsesor/PerfilAsesor";
+import { InfoEmpresa } from "./pages/InfoEmpresa/InfoEmpresa";
 import Error404 from "./pages/404/Error404";
 
 
@@ -41,6 +42,7 @@ function App() {
               <Route path="buscador" element={<Buscador/>} />
               <Route path="asistencias" element={<Asistencia/>} />
               <Route path="cargarempresa" element={<CargarEmpresa/>}/>
+              <Route path="info-general/:id" element={<InfoEmpresa/>}/>
 
               <Route path="herramientas" element={<Herramientas/>} />
               <Route path="catalogo" element={<Herramientas/>} />
