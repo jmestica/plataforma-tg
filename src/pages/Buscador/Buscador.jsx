@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Form,
   InputNumber,
@@ -9,11 +9,13 @@ import {
   Tooltip,
   Modal,
   Input,
+  Button,
 } from "antd";
 
 const { TextArea } = Input;
+import { DownloadOutlined } from "@ant-design/icons";
 
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 import "./Buscador.css";
 
@@ -57,6 +59,7 @@ function Buscador() {
   // ============================= INICIALIZACIÓN Y ESTADOS =================================
 
   const navigate = useNavigate();
+  const inputRef = useRef(null);
 
   const [isLoading, setIsLoading] = useState(true);
   const [empresas, setEmpresas] = useState([]);
@@ -114,8 +117,28 @@ function Buscador() {
 
   const [isOpenModalDifusion, setIsOpenModalDifusion] = useState(false);
 
-  const handleOk = () => {
+  const handleCopiarContactos = async () => {
+    // Selecciona el texto en el input
+    const lista = inputRef.current.resizableTextArea.textArea.textContent;
+
+    await navigator.clipboard.writeText(lista);
+
     setIsOpenModalDifusion(false);
+  };
+
+  const handleDescargarDifusion = async () => {
+    const lista = inputRef.current.resizableTextArea.textArea.textContent;
+
+    //Generación y descarga de TXT
+    const blob = new Blob([lista], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+    const enlace = document.createElement("a");
+    enlace.href = url;
+    enlace.download = "Lista de Difusión.txt"; // Nombre del archivo
+    document.body.appendChild(enlace);
+    enlace.click();
+    document.body.removeChild(enlace);
+    URL.revokeObjectURL(url);
   };
 
   const handleCancel = () => {
@@ -224,15 +247,29 @@ function Buscador() {
       <Modal
         title="Lista de Difusión"
         open={isOpenModalDifusion}
-        onOk={handleOk}
+        onOk={handleCopiarContactos}
         onCancel={handleCancel}
         cancelText="Cancelar"
         okText="Copiar mails"
         centered
         style={{ marginLeft: "150px", marginTop: "50px" }}
+        footer={(_, { OkBtn, CancelBtn }) => (
+          <>
+            <CancelBtn />
+            <Button
+              onClick={handleDescargarDifusion}
+              type="primary"
+              icon={<DownloadOutlined />}
+            >
+              Descargar
+            </Button>
+            <OkBtn />
+          </>
+        )}
       >
         <TextArea
           rows={7}
+          ref={inputRef}
           style={{
             backgroundColor: "#f1f1f1",
             fontFamily: "'Courier New', Courier, monospace",
