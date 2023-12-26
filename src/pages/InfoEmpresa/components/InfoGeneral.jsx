@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Tabs, Table, Button } from 'antd';
+import { Table, Button } from 'antd';
 import { LinkOutlined, TeamOutlined } from '@ant-design/icons';
 
 export const InfoGeneral = () => {
