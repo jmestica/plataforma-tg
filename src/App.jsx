@@ -9,7 +9,7 @@ import LayoutDashboard from './components/LayoutDashboard/LayoutDashboard'
 import Home from "./pages/Home/Home";
 import Noticias from "./pages/Noticias/Noticias";
 import Buscador from "./pages/Buscador/Buscador";
-import Asistencia from "./pages/Asistencia/Asistencia";
+import { Asistencia } from "./pages/Asistencia/Asistencia";
 import Herramientas from "./pages/Herramientas/Herramientas";
 import Equipos from "./pages/Equipos/Equipos";
 import Asesores from "./pages/Asesores/Asesores";

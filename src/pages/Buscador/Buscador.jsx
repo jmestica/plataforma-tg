@@ -15,7 +15,7 @@ import {
 const { TextArea } = Input;
 import { DownloadOutlined } from "@ant-design/icons";
 
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./Buscador.css";
 
@@ -32,11 +32,13 @@ const columnas = [
     title: "CUIT",
     dataIndex: "CUIT",
     align: "center",
+    render: (text, record) => <Link to={`/info-general/${record.CUIT}`}>{text}</Link>,
   },
   {
     title: "Razón Social",
     dataIndex: "razon_social",
     align: "center",
+    render: (text, record) => <Link to={`/info-general/${record.CUIT}`}>{text}</Link>,
   },
   {
     title: "Provincia",
@@ -58,7 +60,7 @@ function Buscador() {
 
   // ============================= INICIALIZACIÓN Y ESTADOS =================================
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const inputRef = useRef(null);
 
   const [isLoading, setIsLoading] = useState(true);
@@ -226,9 +228,9 @@ function Buscador() {
         <Table
           columns={columnas}
           dataSource={datatest}
-          onRow={(record) => ({
-            onClick: () => navigate(`/info-general/${record.CUIT}`),
-          })}
+          // onRow={(record) => ({
+          //   onClick: () => navigate(`/info-general/${record.CUIT}`),
+          // })}
         ></Table>
       )}
 
